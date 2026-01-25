@@ -25,9 +25,11 @@ def multiply_numbers(a: int, b: int):
 
 @app.get("/divide")
 def divide_numbers(a: int, b: int):
-    if b == 0:
-        raise HTTPException(status_code=400, detail="Division by zero is not allowed")
-    return {"operation": "divide", "result": a / b}
+    try:
+        result = a / b
+        return {"operation": "divide", "result": result}
+    except ZeroDivisionError:
+        raise HTTPException( status_code=400, detail="Division by zero is not allowed")
 
 
 @app.get("/health")
