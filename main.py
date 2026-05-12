@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "FastAPI backend is running"}
+    return {"message": "FastAPI backend is running from CI/CD revision"}
 
 
 @app.get("/add")
