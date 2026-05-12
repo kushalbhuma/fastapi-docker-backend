@@ -4,7 +4,7 @@ from fastapi import HTTPException
 
 
 def test_add():
-    assert add_numbers(2, 3)["result"] == 10
+    assert add_numbers(2, 3)["result"] == 5
 
 
 def test_subtract():
